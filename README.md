@@ -1,6 +1,6 @@
 # Dependencies
 
-These script are multi-platform, but rely on **NodeJS** to run.
+These script is multi-platform, but relies on **NodeJS** to run.
 
 # Configs deploy
 
