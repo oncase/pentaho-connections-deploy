@@ -1,7 +1,6 @@
-module.exports = function( env ){
+module.exports = function( env, config ){
 
   const request = require('request');
-  const config = require('../config');
   const helpers = require('./helpers');
   const fs = require('fs');
 
@@ -47,7 +46,7 @@ module.exports = function( env ){
 
   lineReader.on('close', function(){
 
-    // Updates properties file with env connections
+    // Updates properties file with environment connections
     // -----------------------------------------------------
     var linesStr = lines.join('\n');
 

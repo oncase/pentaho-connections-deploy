@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const types = require('./dbtypes');
 
 module.exports = {
 
@@ -25,7 +26,7 @@ module.exports = {
       "connectionPoolingProperties": {},
       "extraOptions": {},
       "accessType": "NATIVE",
-      "databaseType": conn.type
+      "databaseType": types[conn.type]
     }
   },
 
@@ -40,10 +41,10 @@ module.exports = {
 
     return '\n\n# Added by pentaho-connections-deploy'+
         '\n' + conn.JNDI +'/type=javax.sql.DataSource' + 
-        '\n' + conn.JNDI +'/driver=' + conn.type.driver + 
+        '\n' + conn.JNDI +'/driver=' + types[conn.type].driver + 
         '\n' + conn.JNDI +'/user=' + conn.user + 
         '\n' + conn.JNDI +'/password=' + conn.password + 
-        '\n' + conn.JNDI +'/url=' + conn.type.protocol + '://' + conn.hostname + inst + ':' + conn.port + dbSep + conn.databaseName;
+        '\n' + conn.JNDI +'/url=' + types[conn.type].protocol + '://' + conn.hostname + inst + ':' + conn.port + dbSep + conn.databaseName;
   },
 
   copyFilesTo(files, to){

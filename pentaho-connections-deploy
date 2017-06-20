@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+const argv = require('yargs').argv
+const deploy = require('./src/main');
+const env = argv.env;
+const cfgFile = argv.config;
+const cwd = process.cwd();
+var config;
+var filename;
+var dbtypes = require('./src/dbtypes');
+
+// Tries to load the configuration 
+try {
+  if(cfgFile === undefined){
+    filename = cwd + '/config.js';
+    config = require(filename);
+  }else{
+    filename = cwd + '/' + cfgFile;
+    config = require(filename);
+  } 
+} catch (e) {
+  if (e instanceof Error && e.code === "MODULE_NOT_FOUND"){
+      console.log("Can't load config.js ", filename);
+      throw e;
+  } else {
+      throw e;
+  }
+  process.exit(1)
+}
+
+deploy(env, config);

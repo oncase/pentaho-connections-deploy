@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-const deploy = require('./src/main');
-const env = process.argv[2] || process.argv[1];
-deploy(env);

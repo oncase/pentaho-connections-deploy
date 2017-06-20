@@ -4,7 +4,7 @@
  *  Connections per environment
  * -------------------------------------------------------------------------- */
 
-var dbtypes = require("./src/dbtypes");
+var dbtypes = require(__dirname+"/src/dbtypes");
 
 module.exports = {
 
@@ -13,7 +13,7 @@ module.exports = {
    * ************************************************************************ */
   local: {
     dw: {
-      type: dbtypes.vertica,
+      type: 'vertica',
       JNDI: 'MY_DW',
       databaseName: "MY_DW",
       port: "5433",
@@ -22,7 +22,7 @@ module.exports = {
       password: '123'
     },
     staging: {
-      type: dbtypes.postgres,
+      type: 'postgres',
       JNDI: 'staging_area',
       databaseName: "staging_area",
       port: "5432",
@@ -31,7 +31,7 @@ module.exports = {
       password: '123'
     },
     transac: {
-      type: dbtypes.mssql,
+      type: 'mssql',
       JNDI: 'TRANSAC',
       SQLServerInstance: 'InstanceName',
       databaseName: "dbName",
@@ -47,7 +47,7 @@ module.exports = {
    * ************************************************************************ */
   production: {
     dw: {
-      type: dbtypes.vertica,
+      type: 'vertica',
       JNDI: 'MY_DW',
       databaseName: "MY_DW",
       port: "5433",
@@ -56,7 +56,7 @@ module.exports = {
       password: '123'
     },
     staging: {
-      type: dbtypes.postgres,
+      type: 'postgres',
       JNDI: 'staging_area',
       databaseName: "staging_area",
       port: "5432",
@@ -65,7 +65,7 @@ module.exports = {
       password: '123'
     },
     transac: {
-      type: dbtypes.mssql,
+      type: 'mssql',
       JNDI: 'TRANSAC',
       SQLServerInstance: 'InstanceName',
       databaseName: "dbName",
