@@ -48,6 +48,13 @@ module.exports = {
   },
 
   copyFilesTo(files, to){
-    fs.copySync(files, to);
+    try {
+      fs.copySync(files, to);
+      console.log('success!')
+    } catch (err) {
+      console.error("Error copying JDBC")
+      console.error(err)
+      console.log("\n\n\n");
+    }
   }
 };
