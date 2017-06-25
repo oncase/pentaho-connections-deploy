@@ -37,7 +37,7 @@ module.exports = {
 
     // MSSQL being the different 
     var inst = conn.SQLServerInstance ? '\\'+ conn.SQLServerInstance : '';
-    var dbSep = inst === '' ? '/'  : ';databaseName=' ;
+    var dbSep = conn.type === 'mssql' ? '/'  : ';databaseName=' ;
 
     return '\n\n# Added by pentaho-connections-deploy'+
         '\n' + conn.JNDI +'/type=javax.sql.DataSource' + 
