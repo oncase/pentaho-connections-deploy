@@ -1,6 +1,6 @@
 {
   "name": "pentaho-connections-deploy",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "repository": "https://github.com/oncase/pentaho-connections-deploy",
   "main": "src/main.js",
