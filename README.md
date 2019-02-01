@@ -5,7 +5,7 @@ Have your connections information per environment into your projects repository 
 First install it globally
 
 ```bash
-npm instlal -g pentaho-connections-deploy
+npm install -g pentaho-connections-deploy
 ```
 
 Then, being on the same folder as your `config.js` file, type:
